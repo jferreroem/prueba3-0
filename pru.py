@@ -1,18 +1,18 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-from flask import Flask, request, jsonify
+from sys import argv
+import bottle
+from bottle import route,run
 from datetime import datetime
 
-app = Flask(__name__)
+bottle.debug(True)
 
-@app.route('/')
-def hello():
-    return str(datetime.utcnow())
+@route('/')
+def index():
+	return str(datetime.utcnow())
 
-
-@app.route('/api', methods=['GET'])
+@route('/api', methods=['GET'])
 def api():
     return jsonify({"time":str(datetime.utcnow())})
 
-if __name__ == '__main__':
-    app.run()
+
