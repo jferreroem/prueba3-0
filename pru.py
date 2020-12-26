@@ -15,4 +15,5 @@ def index():
 def api():
     return jsonify({"time":str(datetime.utcnow())})
 
-
+if __name__ == '__main__':
+	run(host='0.0.0.0',port=argv[1])
