@@ -1,2 +1,2 @@
 
-web: python ./app.py $PORT
+web: python ./pru.py $PORT
